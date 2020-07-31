@@ -8,21 +8,50 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" /> -->
+  <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Antic+Slab&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <title>Work Day Scheduler</title>
 </head>
 
 <body>
   <header class="jumbotron">
-    <h1 class="display-3">Work Day Scheduler</h1>
-    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <h1 class="display-3">Schedule Your Work Days</h1>
+    <p class="lead">“How did it get so late so soon?” ― Dr. Seuss</p>
     <p id="currentDay" class="lead"></p>
     <h3 class="current-day"></h3>
   </header>
   <div class="container">
     <!-- Timeblocks go here -->
+
+    <div class="row">
+
+      <div class="col-2 text-center hour">Hour
+        <div class="col-12 ">9:00AM</div>
+        
+        <!-- <div>9:00AM</div> -->
+        <div class="col-12 ">10:00AM</div>
+      </div>
+
+      <div class="col-9 text-center schedule">Schedule
+        <input class="col-12 " type="text">
+        
+        <!-- <input type="text"> -->
+        <input class="col-12 " type="text">
+      </div>
+
+      <div class="col-1 text-center submit-button">Button
+        <button class="col-12 ">Ok</button>
+        
+        <!-- <button>Ok</button> -->
+        <button class="col-12 ">Ok</button>
+      </div>
+
+    </div>
+    
   </div>
+  <!-- div with editable box -->
+  <!-- <div contenteditable="true" style="outline: solid;">Hodor!</div> -->
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
