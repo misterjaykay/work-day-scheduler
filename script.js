@@ -34,7 +34,7 @@ for (var i = 0; i < allHourList.length; i++) {
     var timeDiv = $("<th>").text(allHourList[i]).attr("scope", "row").attr("style", "text-align: center;");
     var messageDiv = $("<td>").html("<input class='textMessage-" + i + "' size='100' type='text' data-input='" + i + "' >");
     var buttonDiv = $("<td>").html("<input class='submit-button' data-value='" + i + "' type='button' value='submit' >").attr("style", "text-align: center;")
-    // AT BUTTONDIV, REMOVED BOTTOM LINE
+    // AT VAR BUTTONDIV, REMOVED BOTTOM LINE
     // .addClass("submit-button-" + i);
     
     $(tRow).prepend(timeDiv, messageDiv, buttonDiv);
@@ -96,53 +96,55 @@ $(".submit-button").on("click", function(event) {
 
 });
 
-///////// USING FUNCTION TO BRING BACK DATA
-// function bringBack() {
-//     var localText = JSON.parse(localStorage.getItem("test"));
-//     $(".textMessage-1").attr("value", localText);
-//     console.log(localText);
-// }
 
+///////////// GETTING THE DATA FROM LOCAL STORAGE WHEN YOU REFRESH YOUR PAGE
 function bringBack() {
 
-    if (localStorage.getItem("textRowOne") == null) {
-    var localTextOne = JSON.parse(localStorage.getItem("textRowOne"));
-        $(".textMessage-0").attr("textRowOne", localTextOne);
-        console.log(localTextOne);
+    if (localTextOne != null || localTextOne != "") {
+        var localTextOne = JSON.parse(localStorage.getItem("textRowOne"));
+        $(".textMessage-0").attr("value", localTextOne);
     }
 
-    var localTextTwo = JSON.parse(localStorage.getItem("textRowTwo"));
-        $(".textMessage-1").attr("textRowTwo", localTextTwo);
+    if (localTextTwo != null || localTextTwo != "") {
+        var localTextTwo = JSON.parse(localStorage.getItem("textRowTwo"));
+        $(".textMessage-1").attr("value", localTextTwo);
+    }
 
-    var localTextThree = JSON.parse(localStorage.getItem("textRowThree"));
-        $(".textMessage-2").attr("textRowThree", localTextThree);
+    if (localTextThree != null || localTextThree != "") {
+        var localTextThree = JSON.parse(localStorage.getItem("textRowThree"));
+        $(".textMessage-2").attr("value", localTextThree);
+    }
 
-    var localTextFour = JSON.parse(localStorage.getItem("textRowFour"));    
-        $(".textMessage-3").attr("textRowFour", localTextFour);
+    if (localTextFour != null || localTextFour != "") {
+        var localTextFour = JSON.parse(localStorage.getItem("textRowFour"));    
+        $(".textMessage-3").attr("value", localTextFour);
+    }
 
-    var localTextFive = JSON.parse(localStorage.getItem("textRowFive"));
-        $(".textMessage-4").attr("textRowFive", localTextFive);
+    if (localTextFive != null || localTextFive != "") {
+        var localTextFive = JSON.parse(localStorage.getItem("textRowFive"));
+        $(".textMessage-4").attr("value", localTextFive);
+    }
 
-    var localTextSix = JSON.parse(localStorage.getItem("textRowSix"));
-        $(".textMessage-5").attr("textRowSix", localTextSix);
+    if (localTextSix != null || localTextSix != "") {
+        var localTextSix = JSON.parse(localStorage.getItem("textRowSix"));
+        $(".textMessage-5").attr("value", localTextSix);
+    }
 
-    var localTextSeven = JSON.parse(localStorage.getItem("textRowSeven"));
-        $(".textMessage-6").attr("textRowSeven", localTextSeven);
+    if (localTextSeven != null || localTextSeven != "") {
+        var localTextSeven = JSON.parse(localStorage.getItem("textRowSeven"));
+        $(".textMessage-6").attr("value", localTextSeven);
+    }
 
-    var localTextEight = JSON.parse(localStorage.getItem("textRowEight"));
-        $(".textMessage-7").attr("textRowEight", localTextEight);
+    if (localTextEight != null || localTextEight != "") {
+        var localTextEight = JSON.parse(localStorage.getItem("textRowEight"));
+        $(".textMessage-7").attr("value", localTextEight);
+    }
 
-    var localTextNine = JSON.parse(localStorage.getItem("textRowNine"));
-        $(".textMessage-8").attr("textRowNine", localTextNine);
+    if (localTextNine != null || localTextNine != "") {
+        var localTextNine = JSON.parse(localStorage.getItem("textRowNine"));
+        $(".textMessage-8").attr("value", localTextNine);
+    }
 
-        console.log(localText);
 }
 
-///////// FUNCTION TO SAVE DATA INTO LOCALSTORAGE
-// function storeTodos() {
-//     localStorage.setItem("test", JSON.stringify(submitText));
-//     alert("string")
-// }
-
-
-
+bringBack();
