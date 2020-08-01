@@ -34,9 +34,9 @@ After writing any events and click submit button at the right, it will be saved 
 
 Whenever you re-open this app(page), you will still see what you previously filled events.
 
-## Preview
+## Screenshot
 
-![GitHub Logo](/images/logo.png)
+![My Page Preview](/assets/mypage.png)
 
 
 ## Contact
