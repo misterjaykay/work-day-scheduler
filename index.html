@@ -22,36 +22,33 @@
     <h3 class="current-day"></h3>
   </header>
   <div class="container">
-    <!-- Timeblocks go here -->
-
+   
     <div class="row">
 
-      <div class="col-2 text-center hour">Hour
-        <div class="col-12 ">9:00AM</div>
-        
-        <!-- <div>9:00AM</div> -->
-        <div class="col-12 ">10:00AM</div>
-      </div>
+      <table class="table">
 
-      <div class="col-9 text-center schedule">Schedule
-        <input class="col-12 " type="text">
-        
-        <!-- <input type="text"> -->
-        <input class="col-12 " type="text">
-      </div>
+        <thead class="thead-light">
+          <tr>
+            <th scope="col" class="time-header text-center">TIME</th>
+            <th scope="col" class="schedule-header text-center">Schedule</th>
+            <th scope="col" class="button-header text-center">SUBMIT</th>
+          </tr>
+        </thead>
 
-      <div class="col-1 text-center submit-button">Button
-        <button class="col-12 ">Ok</button>
-        
-        <!-- <button>Ok</button> -->
-        <button class="col-12 ">Ok</button>
-      </div>
+        <tbody class="tbody">
+          <!-- SAMPLE HTML TABLE ROW -->
+          <!-- <tr class="first-row">
+            <th scope="row">09:00AM</th>
+            <td>Enter text here</td>
+            <td><input class='myclass' type='button' value='SUBMIT'/></td>
+          </tr> -->
 
+        </tbody>
+
+      </table>
+  
     </div>
-    
   </div>
-  <!-- div with editable box -->
-  <!-- <div contenteditable="true" style="outline: solid;">Hodor!</div> -->
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>

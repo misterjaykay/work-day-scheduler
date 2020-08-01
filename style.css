@@ -4,12 +4,12 @@ body {
   line-height: 1;
 }
 
+/* GOOGLE FONT LIST */
 /* font-family: 'Adamina', serif;
 font-family: 'Antic Slab', serif;
 font-family: 'Bebas Neue', cursive; */
 
 .display-3 {
-  
   font-family: 'Adamina', serif;
 }
 
@@ -17,14 +17,17 @@ font-family: 'Bebas Neue', cursive; */
   font-family: 'Antic Slab', serif;
 }
 
-/* textarea{
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
-} */
+.schedule-header {
+  width: 75%;
+}
+
+.time-header {
+  width: 15%;
+}
+
+.button-header {
+  width: 10%;
+}
 
 .jumbotron {
   text-align: center;
@@ -43,17 +46,11 @@ font-family: 'Bebas Neue', cursive; */
   border-radius: 15px;
 }
 
-.row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;;
+.myclass{
+  display:inline-block;
+  width: 70px;
+  height: 40px;
 }
-
-/* .hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
-} */
 
 .past {
   background-color: #d3d3d3;

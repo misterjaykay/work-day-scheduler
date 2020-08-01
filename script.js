@@ -3,7 +3,7 @@
 // THEN the current day is displayed at the top of the calendar
 
 
-//////// MOMENT.JS USED ///////////
+//////// MOMENT.JS FOR CURRENT TIME APPEARANCE
 var createH3 = $("<h3>");
 $("#currentDay").append(createH3)
 
@@ -17,51 +17,68 @@ var update = setInterval( function() {
     // $("#currentDay").append(createH3)
 }, 1000)
 setInterval(update, 1000);
-///////////////////////////////////
 
 
-// WHEN I scroll down
-// THEN I am presented with timeblocks for standard business hours
+
 
 
 
 ////////////// BUSINESS HOURS //////////
+var allHourList = ["09:00AM", "10:00AM", "11:00AM", "12:00PM", "01:00PM", "02:00PM", "03:00PM", "04:00PM", "05:00PM"];
 
-// var nineHour = $("<div>");
-// nineHour.text("This is nine o clock");
-// nineHour.attr("style", "border-style:solid;")
-// $(".hour").append(nineHour);
-// var nineType = $("<input>");
-// nineType.text("This is nine text");
-// nineType.attr("class", "input");
-// $(".schedule").append(nineType);
+for (var i = 0; i < allHourList.length; i++) {
+    
+    console.log(allHourList[i]);
 
-var tenHour = $("<div>");
-var elevenHour = $("<div>");
-var twelveHour = $("<div>");
-var oneHour = $("<div>");
-var twoHour = $("<div>");
-var threeHour = $("<div>");
-var fourHour = $("<div>");
-var fiveHour = $("<div>");
+    var tRow = $("<tr>").attr("data-hour", i);
+    var tBody = (".tbody");
+    $(tBody).append(tRow);
+    var timeDiv = $("<th>").text(allHourList[i]).attr("scope", "row").attr("style", "text-align: center;");
+    var messageDiv = $("<td>").html("<input class='textMessage-" + i + "' size='100' type='text' >")
+    var buttonDiv = $("<td>").html("<input data-value'" + i + "' type='button' value='submit' >").attr("style", "text-align: center;").addClass("submit-button-" + i);
+    
+    $(tRow).prepend(timeDiv, messageDiv, buttonDiv);
+    $(tBody).append(tRow);
+    
+}
 
-///////////////////////////////
+///////////// GET THE VALUE FROM INPUT
+// function getInputValue(){
+//     // Selecting the input element and get its value 
+//     var inputVal = document.getElementById("myInput").value;
+    
+//     // Displaying the value
+//     alert(inputVal);
+var submitButton = $(".submit-button-1");
 
-// WHEN I view the timeblocks for that day
-// THEN each timeblock is color coded to indicate whether it is in the past, present, or future
+$(submitButton).on("click", function(event) {
+    event.preventDefault();
+    var submitText = $(".textMessage-1").val().trim();
+    console.log(submitText);
+    console.log(typeof submitText);
+    
+    alert("hi")
+    
+    localStorage.setItem("test", JSON.stringify(submitText));
+    alert("string")
+});
 
+///////// USING FUNCTION TO BRING BACK DATA
+// function bringBack() {
+//     var localText = JSON.parse(localStorage.getItem("test"));
+//     $(".textMessage-1").attr("value", localText);
+//     console.log(localText);
+// }
 
-// WHEN I click into a timeblock
-// THEN I can enter an event
+var localText = JSON.parse(localStorage.getItem("test"));
+    $(".textMessage-1").attr("value", localText);
+    console.log(localText);
 
-
-// WHEN I click the save button for that timeblock
-// THEN the text for that event is saved in local storage
-
-
-// WHEN I refresh the page
-// THEN the saved events persist
-
+///////// FUNCTION TO SAVE DATA INTO LOCALSTORAGE
+// function storeTodos() {
+//     localStorage.setItem("test", JSON.stringify(submitText));
+//     alert("string")
+// }
 
 
 
