@@ -67,18 +67,17 @@ var allHourList = [{
 /////////////////// CREATING A TABLE FOR TIME,EVENT INPUT, SUBMIT BUTTON
 for (var i = 0; i < allHourList.length; i++) {
 
-    var tRow = $("<tr>").attr("data-hour", i);
+    var tRow = $("<tr>");
     var tBody = (".tbody");
     $(tBody).append(tRow);
     var timeDiv = $("<th>").text(allHourList[i].timeDesc).attr("scope", "row").attr("style", "text-align: center; padding-top: 17px;");
     var messageDiv = $("<td>").html("<input class='time-check textMessage-" + i + "' size='110' type='text' >");
     // var buttonDiv = $("<td>").html("<input class='submit-button' data-value='" + i + "' type='button' value='save' >").attr("style", "text-align: center;")
-    var buttonDiv = $("<td>").html("<i class='submit-button far fa-save' data-value='" + i + "' type='button' value='save' ></i>").attr("style", "text-align: center;")
-    // AT VAR MESSAGE DIV, REMOVED BOTTOM LINE (FOR FUTURE USE)
-    // data-input='" + i + "'
-    
-    // AT VAR BUTTONDIV, REMOVED BOTTOM LINE (FOR FUTURE USE)
-    // .addClass("submit-button-" + i);
+    var buttonDiv = $("<td>").html("<i class='submit-button far fa-save' data-value='" + i + "' type='button' value='save' ></i>").attr("style", "text-align: center;");
+
+    // From tRow, removed = .attr("data-hour", i)
+    // From meesageDiv, removed = data-input='" + i + "'
+    // From buttonDiv, removed =.addClass("submit-button-" + i);
     
     $(tRow).prepend(timeDiv, messageDiv, buttonDiv);
     $(tBody).append(tRow);
