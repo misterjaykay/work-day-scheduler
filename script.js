@@ -105,10 +105,6 @@ for (var i = 0; i < allHourList.length; i++) {
 }
 
 //////////// SUBMIT BUTTONS TO SAVE EACH TEXT TO LOCAL STORAGE
-
-
-
-
 $(".submit-button").on("click", function(event) {
     event.preventDefault();
     var saveButton = $(this).attr("data-value");
@@ -121,7 +117,6 @@ $(".submit-button").on("click", function(event) {
 
 ///////////// GETTING THE DATA FROM LOCAL STORAGE WHEN YOU REFRESH YOUR PAGE
 function bringBack() {
-
 
     if (localTextOne != null || localTextOne != "") {
         var localTextOne = JSON.parse(localStorage.getItem("0"));
