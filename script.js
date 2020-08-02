@@ -91,16 +91,16 @@ console.log("Current hour is: " + currentHour);
 for (var i = 0; i < allHourList.length; i++) {
     
     if (currentHour > allHourList[i].actualTime) {
-        $(".textMessage-" + i).attr("style", "background-color: #FF9999;");
+        $(".textMessage-" + i).addClass("past");
         $(".textMessage-" + i).prop("disabled", true);
     }
 
     else if (currentHour < allHourList[i].actualTime) {
-        $(".textMessage-" + i).attr("style", "background-color: #66CC66;");
+        $(".textMessage-" + i).removeClass("past").addClass("future");  
     }
     
     else {
-        $(".textMessage-" + i).attr("style", "background-color: #DDDDDD;");
+        $(".textMessage-" + i).removeClass("past","future").addClass("present");  
     }
 }
 

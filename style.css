@@ -40,3 +40,15 @@ font-family: 'Bebas Neue', cursive; */
 i {
   padding-top: 5px;
 }
+
+.past {
+  background-color: #FF9999;
+}
+
+.present {
+  background-color: #DDDDDD;
+}
+
+.future {
+  background-color: #66cc66;
+}
