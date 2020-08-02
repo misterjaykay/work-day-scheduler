@@ -25,16 +25,18 @@ $("#currentDay").append(createH3);
 var allHourList = ["09:00AM", "10:00AM", "11:00AM", "12:00PM", "01:00PM", "02:00PM", "03:00PM", "04:00PM", "05:00PM"];
 
 for (var i = 0; i < allHourList.length; i++) {
-    
-    console.log(allHourList[i]);
 
     var tRow = $("<tr>").attr("data-hour", i);
     var tBody = (".tbody");
     $(tBody).append(tRow);
     var timeDiv = $("<th>").text(allHourList[i]).attr("scope", "row").attr("style", "text-align: center;");
-    var messageDiv = $("<td>").html("<input class='textMessage-" + i + "' size='100' type='text' data-input='" + i + "' >");
-    var buttonDiv = $("<td>").html("<input class='submit-button' data-value='" + i + "' type='button' value='submit' >").attr("style", "text-align: center;")
-    // AT VAR BUTTONDIV, REMOVED BOTTOM LINE
+    var messageDiv = $("<td>").html("<input class='textMessage-" + i + "' size='110' type='text'  >");
+    var buttonDiv = $("<td>").html("<input class='submit-button' data-value='" + i + "' type='button' value='save' >").attr("style", "text-align: center;")
+    
+    // AT VAR MESSAGE DIV, REMOVED BOTTOM LINE (FOR FUTURE USE)
+    // data-input='" + i + "'
+    
+    // AT VAR BUTTONDIV, REMOVED BOTTOM LINE (FOR FUTURE USE)
     // .addClass("submit-button-" + i);
     
     $(tRow).prepend(timeDiv, messageDiv, buttonDiv);
