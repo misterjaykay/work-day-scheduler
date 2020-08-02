@@ -24,7 +24,7 @@ $("#currentDay").append(createH3);
 
 
 // var allHourList = ["09:00AM", "10:00AM", "11:00AM", "12:00PM", "01:00PM", "02:00PM", "03:00PM", "04:00PM", "05:00PM"];
-////////////// BUSINESS HOURS //////////
+////////////// ARRAY OF HOURS
 var allHourList = [{
         timeDesc: "09:00AM",
         actualTime: 9
@@ -62,6 +62,9 @@ var allHourList = [{
         actualTime: 17
     }];
 
+
+
+/////////////////// CREATING A TABLE FOR TIME,EVENT INPUT, SUBMIT BUTTON
 for (var i = 0; i < allHourList.length; i++) {
 
     var tRow = $("<tr>").attr("data-hour", i);
@@ -82,9 +85,9 @@ for (var i = 0; i < allHourList.length; i++) {
     
 }
 
-
+///////////// DEPENDS ON TIME, TIMEBLOCKS WILL BE COLORED AND DISABLED.
 var currentHour = moment(localTime).format("HH");
-console.log(currentHour);
+console.log("Current hour is: " + currentHour);
 for (var i = 0; i < allHourList.length; i++) {
     
     if (currentHour > allHourList[i].actualTime) {
