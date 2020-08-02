@@ -1,3 +1,5 @@
+$(document).ready(function() {
+});
 
 //////// MOMENT.JS FOR CURRENT TIME APPEARANCE
 var date = moment.utc().format('YYYY-MM-DD HH:mm:ss');
@@ -21,18 +23,54 @@ $("#currentDay").append(createH3);
 
 
 
+// var allHourList = ["09:00AM", "10:00AM", "11:00AM", "12:00PM", "01:00PM", "02:00PM", "03:00PM", "04:00PM", "05:00PM"];
 ////////////// BUSINESS HOURS //////////
-var allHourList = ["09:00AM", "10:00AM", "11:00AM", "12:00PM", "01:00PM", "02:00PM", "03:00PM", "04:00PM", "05:00PM"];
+var allHourList = [{
+        timeDesc: "09:00AM",
+        actualTime: 9
+    },
+    {
+        timeDesc: "10:00AM",
+        actualTime: 10
+    },
+    {
+        timeDesc: "11:00AM",
+        actualTime: 11
+    },
+    {
+        timeDesc: "12:00PM",
+        actualTime: 12
+    },
+    {
+        timeDesc: "01:00PM",
+        actualTime: 13
+    },
+    {
+        timeDesc: "02:00PM",
+        actualTime: 14
+    },
+    {
+        timeDesc: "03:00PM",
+        actualTime: 15
+    },
+    {
+        timeDesc: "04:00PM",
+        actualTime: 16
+    },
+    {
+        timeDesc: "05:00PM",
+        actualTime: 17
+    }];
 
 for (var i = 0; i < allHourList.length; i++) {
 
     var tRow = $("<tr>").attr("data-hour", i);
     var tBody = (".tbody");
     $(tBody).append(tRow);
-    var timeDiv = $("<th>").text(allHourList[i]).attr("scope", "row").attr("style", "text-align: center;");
-    var messageDiv = $("<td>").html("<input class='textMessage-" + i + "' size='110' type='text'  >");
-    var buttonDiv = $("<td>").html("<input class='submit-button' data-value='" + i + "' type='button' value='save' >").attr("style", "text-align: center;")
-    
+    var timeDiv = $("<th>").text(allHourList[i].timeDesc).attr("scope", "row").attr("style", "text-align: center; padding-top: 17px;");
+    var messageDiv = $("<td>").html("<input class='time-check textMessage-" + i + "' size='110' type='text' >");
+    // var buttonDiv = $("<td>").html("<input class='submit-button' data-value='" + i + "' type='button' value='save' >").attr("style", "text-align: center;")
+    var buttonDiv = $("<td>").html("<i class='submit-button far fa-save' data-value='" + i + "' type='button' value='save' ></i>").attr("style", "text-align: center;")
     // AT VAR MESSAGE DIV, REMOVED BOTTOM LINE (FOR FUTURE USE)
     // data-input='" + i + "'
     
@@ -45,6 +83,23 @@ for (var i = 0; i < allHourList.length; i++) {
 }
 
 
+var currentHour = moment(localTime).format("HH");
+console.log(currentHour);
+for (var i = 0; i < allHourList.length; i++) {
+    
+    if (currentHour > allHourList[i].actualTime) {
+        $(".textMessage-" + i).attr("style", "background-color: #FF9999;");
+        $(".textMessage-" + i).prop("disabled", true);
+    }
+
+    else if (currentHour < allHourList[i].actualTime) {
+        $(".textMessage-" + i).attr("style", "background-color: #66CC66;");
+    }
+    
+    else {
+        $(".textMessage-" + i).attr("style", "background-color: #DDDDDD;");
+    }
+}
 
 //////////// SUBMIT BUTTONS TO SAVE EACH TEXT TO LOCAL STORAGE
 $(".submit-button").on("click", function(event) {
