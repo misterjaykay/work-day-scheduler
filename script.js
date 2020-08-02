@@ -105,54 +105,16 @@ for (var i = 0; i < allHourList.length; i++) {
 }
 
 //////////// SUBMIT BUTTONS TO SAVE EACH TEXT TO LOCAL STORAGE
+
+
+
+
 $(".submit-button").on("click", function(event) {
     event.preventDefault();
     var saveButton = $(this).attr("data-value");
-    
-    if (saveButton == 0) {
-        var textRowOne = $(".textMessage-0").val().trim();
-        localStorage.setItem("textRowOne", JSON.stringify(textRowOne));
-    }
-
-    if (saveButton == 1) {
-        var textRowTwo = $(".textMessage-1").val().trim();
-        localStorage.setItem("textRowTwo", JSON.stringify(textRowTwo)); 
-    }
-
-    if (saveButton == 2) {
-        var textRowThree = $(".textMessage-2").val().trim();
-        localStorage.setItem("textRowThree", JSON.stringify(textRowThree));
-    }
-
-    if (saveButton == 3) {
-        var textRowFour = $(".textMessage-3").val().trim();
-        localStorage.setItem("textRowFour", JSON.stringify(textRowFour));
-    }
-
-    if (saveButton == 4) {
-        var textRowFive = $(".textMessage-4").val().trim();
-        localStorage.setItem("textRowFive", JSON.stringify(textRowFive));
-    }
-
-    if (saveButton == 5) {
-        var textRowSix = $(".textMessage-5").val().trim();
-        localStorage.setItem("textRowSix", JSON.stringify(textRowSix));
-    }
-
-    if (saveButton == 6) {
-        var textRowSeven = $(".textMessage-6").val().trim();
-        localStorage.setItem("textRowSeven", JSON.stringify(textRowSeven));
-    }
-
-    if (saveButton == 7) {
-        var textRowEight = $(".textMessage-7").val().trim();
-        localStorage.setItem("textRowEight", JSON.stringify(textRowEight));
-    }
-
-    if (saveButton == 8) {
-        var textRowNine = $(".textMessage-8").val().trim();
-        localStorage.setItem("textRowNine", JSON.stringify(textRowNine));
-    }
+    var userInputValue = $(this).parent().siblings().children().val();
+    console.log(userInputValue);
+    localStorage.setItem(saveButton, JSON.stringify(userInputValue));
 
 });
 
@@ -160,48 +122,49 @@ $(".submit-button").on("click", function(event) {
 ///////////// GETTING THE DATA FROM LOCAL STORAGE WHEN YOU REFRESH YOUR PAGE
 function bringBack() {
 
+
     if (localTextOne != null || localTextOne != "") {
-        var localTextOne = JSON.parse(localStorage.getItem("textRowOne"));
+        var localTextOne = JSON.parse(localStorage.getItem("0"));
         $(".textMessage-0").attr("value", localTextOne);
     }
 
     if (localTextTwo != null || localTextTwo != "") {
-        var localTextTwo = JSON.parse(localStorage.getItem("textRowTwo"));
+        var localTextTwo = JSON.parse(localStorage.getItem("1"));
         $(".textMessage-1").attr("value", localTextTwo);
     }
 
     if (localTextThree != null || localTextThree != "") {
-        var localTextThree = JSON.parse(localStorage.getItem("textRowThree"));
+        var localTextThree = JSON.parse(localStorage.getItem("2"));
         $(".textMessage-2").attr("value", localTextThree);
     }
 
     if (localTextFour != null || localTextFour != "") {
-        var localTextFour = JSON.parse(localStorage.getItem("textRowFour"));    
+        var localTextFour = JSON.parse(localStorage.getItem("3"));    
         $(".textMessage-3").attr("value", localTextFour);
     }
 
     if (localTextFive != null || localTextFive != "") {
-        var localTextFive = JSON.parse(localStorage.getItem("textRowFive"));
+        var localTextFive = JSON.parse(localStorage.getItem("4"));
         $(".textMessage-4").attr("value", localTextFive);
     }
 
     if (localTextSix != null || localTextSix != "") {
-        var localTextSix = JSON.parse(localStorage.getItem("textRowSix"));
+        var localTextSix = JSON.parse(localStorage.getItem("5"));
         $(".textMessage-5").attr("value", localTextSix);
     }
 
     if (localTextSeven != null || localTextSeven != "") {
-        var localTextSeven = JSON.parse(localStorage.getItem("textRowSeven"));
+        var localTextSeven = JSON.parse(localStorage.getItem("6"));
         $(".textMessage-6").attr("value", localTextSeven);
     }
 
     if (localTextEight != null || localTextEight != "") {
-        var localTextEight = JSON.parse(localStorage.getItem("textRowEight"));
+        var localTextEight = JSON.parse(localStorage.getItem("7"));
         $(".textMessage-7").attr("value", localTextEight);
     }
 
     if (localTextNine != null || localTextNine != "") {
-        var localTextNine = JSON.parse(localStorage.getItem("textRowNine"));
+        var localTextNine = JSON.parse(localStorage.getItem("8"));
         $(".textMessage-8").attr("value", localTextNine);
     }
 
